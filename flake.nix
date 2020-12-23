@@ -1,6 +1,6 @@
 {
   outputs = { self }: {
-    fromDhall = pkgs: path: with pkgs;
+    __functor = self: pkgs: path: with pkgs;
       let
         der = runCommand ""
           {
