@@ -1,6 +1,6 @@
 {
-  outputs = { self }: {
-    __functor = self: pkgs: path: with pkgs;
+  outputs = { self, nixpkgs }: {
+    __functor = _: system: path: with nixpkgs.legacyPackages.${system};
       let
         der = runCommand ""
           {
